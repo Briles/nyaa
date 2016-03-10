@@ -1,0 +1,89 @@
+extends partials/skeleton
+
+block head
+  - var title = "Upload"
+  - var description = "This description was set from the child!"
+
+block body
+  .main-content.col-primary
+    .content-wrapper
+      .form-wrapper.centered
+        h1.page-title.primary Upload
+        p
+          | Group members are strongly advised to create an account for the group and upload torrents when logged in. This allows you to manage your own torrents, provide a group listing on the site, and provide group-specific RSS feeds to your users. There is no limitation as to how many accounts you may use or share with others. Create and share a new account for each group you are uploading for if you so wish.
+        p
+          strong http://open.nyaatorrents.info:6544/announce
+          |  is available since forever.
+        .alert.warning
+          | You are not logged in; we will not provide support to anyone who uploads torrents anonymously.
+        form(method='post', action='', accept-charset='utf-8')
+          dl
+            dt
+              label(for='torrent_name') Entry Name (Optional):
+            dd
+              input#torrent_name(type='text', placeholder='The name of your torrent', name='name')
+          dl
+            dt
+              label(for='torrent_file')
+                | Torrent File
+                i or
+                |  Torrent URL:
+            dd
+              input#torrent_file(type='file', placeholder='File', name='torrent')
+              input#torrent_url(type='url', placeholder='Torrent URL', name='torrenturl')
+          dl
+            dt
+              label(for='torrent_category') Category:
+            dd
+              select#torrent_category(name='catid')
+                option(value='FALSE')  Category
+                optgroup(label='http://www.nyaa.se/')
+                  option(value='1_32') Anime - Anime Music Video
+                  option(value='1_37') Anime - English-translated Anime
+                  option(value='1_38') Anime - Non-English-translated Anime
+                  option(value='1_11') Anime - Raw Anime
+                  option(value='3_14') Audio - Lossless Audio
+                  option(value='3_15') Audio - Lossy Audio
+                  option(value='2_12') Literature - English-translated Literature
+                  option(value='2_39') Literature - Non-English-translated Literature
+                  option(value='2_13') Literature - Raw Literature
+                  option(value='5_19') Live Action - English-translated Live Action
+                  option(value='5_22') Live Action - Live Action Promotional Video
+                  option(value='5_21') Live Action - Non-English-translated Live Action
+                  option(value='5_20') Live Action - Raw Live Action
+                  option(value='4_18') Pictures - Graphics
+                  option(value='4_17') Pictures - Photos
+                  option(value='6_23') Software - Applications
+                  option(value='6_24') Software - Games
+          dl
+            dt
+              label(for='torrent_info') Information URL:
+            dd
+              input#torrent_info(type='text', placeholder='Link to IRC channel, website, etc.', name='info')
+          dl
+            dt
+            dd
+              label(for='torrent_hidden')
+                input#torrent_hidden(type='checkbox', name='hidden', value='1')
+                |  Hide this torrent from view
+          dl
+            dt
+            dd
+              label(for='torrent_remake')
+                input#torrent_remake(type='checkbox', name='remake', value='1')
+                = "This torrent is a "
+                a(href='help.html#website') remake
+          dl
+            dt
+              label(for='torrent_description') Description:
+            dd
+              textarea#torrent_description(placeholder='Supports basic BBCode like [b], [i], [s], [u], [left], [center], [right], [code], [email], [img], [url], [color], [font], [size], [quote], and [spoiler].', name='description')
+          dl
+            dt
+            dd
+              label(for='rules')
+                input#rules(type='checkbox', name='rules', value='1', required='')
+                = "I have read "
+                a(href='http://www.nyaa.se/?page=manual', target='_blank') the rules
+                | , and I understand that failure to comply will result in the removal of my torrent.
+          button.button.button-blue(type='submit') Upload

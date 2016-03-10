@@ -1,0 +1,1113 @@
+@mixin placeholder($color) {
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+  :-moz-placeholder {
+    opacity: 1;
+    color: $color;
+  }
+  ::-moz-placeholder {
+    opacity: 1;
+    color: $color;
+  }
+  :-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// set the input placeholder text color
+@include placeholder($black-high);
+
+body {
+  font: normal normal 13px/1.5 arial, sans-serif;
+
+  margin: 0;
+
+  text-rendering: optimizeLegibility;
+
+  background: $bluegrey50;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $blue500;
+  &:hover, &.isolated-text:hover {
+    color: $blue700;
+  }
+  &.isolated-text {
+    color: $grey600;
+  }
+}
+
+ul.padded, ol.padded {
+  padding-left: 40px;
+  li {
+    padding: 4px 0;
+  }
+}
+
+input[type='text'], input[type='password'], input[type='email'], input[type='number'], input[type='url'], input[type='file'], input[type='url'], textarea, select {
+  box-sizing: border-box;
+  min-height: 28px;
+  padding: 9px 12px;
+
+  transition: color 200ms ease-in-out 0ms,border-color 200ms ease-in-out 0ms,background-color 200ms ease-in-out 0ms;
+  vertical-align: middle;
+
+  color: $black-high;
+  border: 2px solid $grey300;
+  border-radius: 2px;
+  outline: none;
+  background-color: $grey100;
+  background-repeat: no-repeat;
+  background-position: right center;
+  &:hover {
+    border-color: $grey400;
+  }
+  &:focus {
+    color: $black-ultra-high;
+    border-color: $grey400;
+    background-color: $white;
+  }
+}
+
+input[type=checkbox], input[type=radio] {
+  display: inline-block;
+}
+
+textarea {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+label {
+  color: $black-ultra-high;
+}
+
+button {
+  border: 0;
+  outline: 0;
+}
+
+img {
+  vertical-align: middle;
+  &.fluid-img {
+    width: auto\9; // IE8
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+article {
+  padding: 15px;
+  section {
+    padding: 15px 0;
+  }
+}
+
+pre {
+  display: inline;
+}
+
+dl {
+  dd {
+    margin: 0;
+  }
+
+  &.text-terms {
+    dd {
+      padding: 3px 8px;
+      p, pre {
+        margin: 0;
+        padding: 4px 0;
+      }
+      pre {
+        padding: 4px 8px;
+
+        white-space: pre-wrap;
+
+        border-radius: 2px;
+        background: $grey200;
+      }
+      ul, ol {
+        padding: 4px 0;
+        padding-left: 20px;
+        li {
+          padding: 4px 0;
+        }
+      }
+    }
+    dt {
+      font-weight: 700;
+
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.button {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+
+  position: relative;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  min-height: 28px;
+  padding: 9px 12px;
+
+  cursor: pointer;
+  transition: all 200ms ease-in-out 0ms;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+
+  border-radius: 2px;
+  &.button-empty {
+    border: 2px solid transparent;
+    background-color: transparent;
+  }
+  &.button-blue {
+    color: $white-ultra-high;
+    background-color: $blue500;
+    &:hover, &:focus {
+      color: $white;
+      background-color: $blue600;
+    }
+    &:focus {
+      box-shadow: inset 0 2px 0 $blue700;
+    }
+  }
+  &.button-grey {
+    color: $black-high;
+    background-color: $grey100;
+    &:hover {
+      background-color: $grey300;
+    }
+    &:focus {
+      box-shadow: inset 0 2px 0 $grey400;
+    }
+    &.button-empty {
+      border-color: $grey300;
+      &:hover, &:focus {
+        color: $black-ultra-high;
+        border-color: $grey400;
+        background-color: $white;
+      }
+      &:hover {
+        color: $black-high;
+      }
+    }
+  }
+  &.button-icon > .nyaacon {
+    margin-right: 8px;
+  }
+}
+
+.clearfix {
+  &::before, &::after {
+    display: table;
+
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.header-container, .content-wrapper, footer {
+  @extend .clearfix;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-red {
+  color: $red500;
+}
+
+.text-green {
+  color: $green500;
+}
+
+.width-container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.content-text-only {
+  // when the content is only text, limiting the width makes it easier to read
+  max-width: percentage(2 / 3);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+// generic columns for flexible layout
+.col {
+  display: block;
+  float: left;
+
+  box-sizing: border-box;
+  padding-right: 15px;
+  &.col-50 {
+    width: 50%;
+    &:nth-child(2) {
+      padding-right: 0;
+    }
+  }
+}
+
+// Display notice for old browsers
+.browserupgrade {
+  font-size: 15px;
+
+  padding: 8px 15px;
+
+  text-align: center;
+
+  color: $white;
+  background: hsl(0, 64%, 63%);
+}
+
+// styles used for basic page headers
+.page-title {
+  font-family: $--font-stack;
+  font-weight: 500;
+
+  margin: 0;
+
+  color: $black-ultra-high;
+  &.primary {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    color: $black-high;
+  }
+  &.secondary {
+    font-size: 24px;
+    font-weight: 300;
+
+    margin-bottom: 10px;
+  }
+  &.inline {
+    display: inline-block;
+  }
+}
+
+.form-wrapper {
+  box-sizing: border-box;
+  width: percentage(1 / 3);
+  min-width: 480px;
+  padding: 15px;
+  select, input[type=text], input[type=email], input[type=password], input[type='file'], input[type='url'], textarea {
+    width: 100%;
+    margin-bottom: 9px;
+  }
+  input {
+    margin-bottom: 9px;
+  }
+  input[type=checkbox], input[type=radio] {
+    margin-right: 5px;
+  }
+  dl {
+    dt {
+      margin-bottom: 5px;
+    }
+  }
+  &.centered {
+    margin: 0 auto;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  box-shadow: 0 2px 5px $black-low;
+  .header-container {
+    padding: 10px;
+
+    background: $blue500;
+  }
+  nav {
+    float: left;
+    ul {
+      li {
+        position: relative;
+
+        display: inline-block;
+        a {
+          font-family: $--font-stack;
+          font-size: 15px;
+
+          display: block;
+
+          padding: 3px 10px;
+
+          text-decoration: none;
+          letter-spacing: .015em;
+
+          color: $white-ultra-high;
+          &:hover, &.active {
+            transition: all 200ms ease-in-out 0ms;
+
+            color: $white;
+          }
+        }
+        &.header-nav-link > .subnav {
+          position: absolute;
+          z-index: 101;
+          top: 28px;
+          left: 0;
+
+          display: none;
+
+          padding-top: 10px;
+          ul {
+            display: block;
+
+            padding: 5px 0;
+
+            border-radius: 0 0 2px 2px;
+            background: $white;
+            box-shadow: 0 1px 6px $black-high;
+            li {
+              display: block;
+              a {
+                font-size: 14px;
+
+                min-width: 125px;
+                padding: 6px 8px;
+
+                text-align: left;
+                white-space: nowrap;
+
+                color: $black-high;
+                border-radius: 0;
+                &:hover {
+                  color: $black-ultra-high;
+                  background: $grey100;
+                }
+              }
+            }
+          }
+        }
+        &.header-nav-link:hover > .subnav {
+          display: block;
+        }
+      }
+    }
+  }
+  .search-wrapper {
+    float: right;
+    input, select {
+      display: inline-block;
+
+      margin-left: 10px;
+      padding: 5px 8px;
+
+      border: 0;
+      background: $white;
+    }
+    select {
+      width: 150px;
+    }
+    .input-wrapper {
+      display: inline-block;
+      input {
+        width: 250px;
+        padding-right: 30px;
+      }
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 5px;
+
+        background: transparent;
+        .nyaacon {
+          font-size: 18px;
+
+          color: $black-high;
+        }
+        &:hover {
+          .nyaacon {
+            color: $black-ultra-high;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 15px;
+
+  text-align: center;
+
+  color: $black-high;
+  img {
+    border-radius: 24px;
+  }
+}
+
+// the blocks that make up the site
+.main-content-wrapper {
+  padding: 15px;
+  padding-top: 63px; // account for the height of the header (48px) + 15px
+}
+
+.main-content {
+  box-sizing: border-box;
+  width: 100%;
+
+  vertical-align: top;
+  &.col-primary {
+    display: table-cell;
+  }
+  &.col-secondary {
+    display: table-cell;
+
+    width: 120px;
+    padding-left: 15px;
+  }
+  &.row-secondary {
+    padding-top: 15px;
+  }
+  .content-wrapper {
+    display: block;
+
+    box-sizing: border-box;
+
+    border-radius: 2px;
+    background: $white;
+    box-shadow: 0 1px 5px $black-low;
+  }
+}
+
+// table for torrent browsing
+table.torrents {
+  width: 100%;
+  thead {
+    tr {
+      border-bottom: 1px solid $grey300;
+      th {
+        font-size: 12px;
+        font-weight: 400;
+
+        padding: 0 0 4px;
+
+        text-transform: uppercase;
+
+        color: $grey400;
+        &:first-child {
+          padding-left: 8px;
+
+          text-align: left;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      color: $grey700;
+      border-bottom: 1px solid $grey200;
+      td {
+        position: relative;
+
+        padding: 8px;
+
+        text-align: center;
+        &:first-child {
+          text-align: left;
+        }
+      }
+      &:nth-child(even) {
+        background-color: $grey50;
+      }
+      &:hover {
+        transition: all 200ms ease-in-out 0ms;
+
+        color: $grey900;
+        border-color: $grey300;
+        background-color: $grey100;
+      }
+    }
+  }
+  .torrent-name {
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    color: $grey700;
+    &:hover {
+      transition: all 200ms ease-in-out 0ms;
+
+      color: $blue700;
+    }
+  }
+}
+
+// torrent listing categories
+.category {
+  font-size: 12px;
+
+  display: block;
+
+  margin: 2px 0 0 1px;
+
+  color: $grey500;
+  a {
+    text-decoration: none;
+
+    color: inherit;
+    &:hover {
+      color: $blue700;
+    }
+  }
+  &.inline {
+    display: inline-block;
+
+    margin-left: 10px;
+  }
+}
+
+// labels for the various torrent qualities
+//
+// .label-best      - for A+ quality torrents (blue)
+// .label-trusted   - for trusted torrents (green)
+// .label-remake    - for remade torrents (orange)
+// .label-hidden    - for hidden torrents (gray)
+
+// .large           - increases the size of the label
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+
+  display: inline-block;
+
+  padding: 3px 5px;
+
+  text-decoration: none;
+
+  color: $white-ultra-high;
+  border-radius: 2px;
+  .nyaacon {
+    font-size: 12px;
+
+    margin-right: 8px;
+  }
+  &:hover {
+    color: $white;
+  }
+  &.large {
+    font-size: 13px;
+    line-height: 12px;
+
+    padding: 6px 10px;
+  }
+  &.label-best {
+    background: $blue500;
+  }
+  &.label-trusted {
+    background: $lightgreen500;
+  }
+  &.label-remake {
+    background: $yellow800;
+  }
+  &.label-hidden {
+    background: $grey500;
+  }
+  &.label-user {
+    background: $indigo500;
+  }
+}
+
+// tabbed navigation
+//
+// :hover       - subtle emphasis to show highlighted tab
+// .selected    - the currently active tabbed is more prominent
+.tabnav {
+  display: block;
+
+  border-bottom: 1px solid $grey300;
+}
+
+.tabnav-tabs {
+  @extend .clearfix;
+  li {
+    display: inline-block;
+
+    margin-bottom: -1px;
+  }
+}
+
+.tabnav-tab {
+  font-size: 14px;
+  line-height: 18px;
+
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  text-decoration: none;
+
+  color: $black-high;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  &:hover {
+    text-decoration: none;
+
+    color: $black-ultra-high;
+  }
+  &.selected {
+    color: $black-ultra-high;
+    border-color: $grey300;
+    border-radius: 2px 2px 0 0;
+    background: $white;
+  }
+}
+
+// pill navigation links for links that should be grouped
+//
+// :hover           - subtle emphasis to show highlighted link
+// :active          - show depression when button is active
+// .selected        - the currently active link is more prominent
+.pillnav {
+  @extend .clearfix;
+
+  display: inline-block;
+
+  margin: 5px 0;
+
+  vertical-align: middle;
+  + .pillnav {
+    margin-left: 0;
+    padding-left: 6px;
+
+    border-left: 1px solid $grey300;
+  }
+  a {
+    line-height: 18px;
+
+    float: left;
+
+    box-sizing: border-box;
+    min-height: 28px;
+    margin-right: 5px;
+    padding: 9px;
+
+    text-decoration: none;
+
+    color: $grey600;
+    border-radius: 2px;
+    background-color: $white;
+    &.selected, &:hover {
+      transition: all 200ms ease-in-out 0ms;
+
+      color: $grey900;
+      background-color: $grey200;
+    }
+    &:active {
+      background-color: $grey400;
+      box-shadow: inset 0 2px 0 $grey500;
+    }
+  }
+}
+
+// pagination for navigating between pages
+//
+// :hover           - Subtle hover highlight.
+// .current         - different background color indicates the current page.
+// .disabled        - Dims the link to indicate it cannot be used.
+.pagination {
+  @extend .clearfix;
+
+  box-sizing: border-box;
+  &.isolated {
+    margin: 15px 0;
+    padding: 8px 15px;
+
+    border: 1px solid $grey300;
+    border-right: 0;
+    border-left: 0;
+    background-color: $grey100;
+  }
+  a {
+    line-height: 18px;
+
+    float: left;
+
+    margin-right: 4px;
+    padding: 5px 8px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: $black-high;
+    border-radius: 2px;
+    background-color: $grey200;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $black-ultra-high;
+      background-color: $grey300;
+    }
+    &.disabled, &:active {
+      background-color: $grey300;
+      box-shadow: inset 0 1px 0 $grey400;
+    }
+    &.current {
+      color: $white;
+      background: $blue500;
+    }
+    &.disabled, .current {
+      cursor: default;
+      pointer-events: none; // disables the clicking action in modern browsers, does not degrade gracefully
+    }
+  }
+}
+
+// comment sections.
+.comment-thread {
+  display: block;
+  .comment-thread-comment {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: 7px;
+    padding-bottom: 15px;
+    .comment-avatar {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      img {
+        vertical-align: top;
+
+        border-radius: 2px;
+      }
+    }
+    .comment-content-container {
+      position: relative;
+
+      box-sizing: border-box;
+      min-height: 50px;
+      padding-left: 72px;
+      .comment-title {
+        width: 100%;
+        padding-bottom: 8px;
+
+        color: $black-high;
+        a {
+          margin: 0 8px;
+        }
+      }
+      .comment-content {
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+    &:nth-child(even) {
+      background: $grey50;
+    }
+  }
+  .comment-cta {
+    margin-top: 15px;
+    padding-top: 15px;
+
+    border-top: 1px solid $black-ultra-low;
+    .comment-reply {
+      textarea {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.page-torrents {
+  .torrents-wrapper {
+    padding: 0 15px;
+  }
+  .tabnav {
+    margin-bottom: 15px;
+    padding: 8px 15px 0;
+
+    background: $grey100;
+  }
+  .pillnav {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+// styles specific to the specific torrent page
+.page-view-torrent {
+  .page-title {
+    margin-top: 15px;
+    &.primary {
+      color: $grey800;
+    }
+    + .category {
+      margin-top: -15px;
+      margin-bottom: 15px;
+    }
+  }
+  .torrent-info {
+    display: block;
+
+    padding-top: 8px;
+    li {
+      line-height: 18px;
+
+      padding: 9px 0;
+
+      list-style-type: none;
+
+      color: $black-ultra-high;
+      .nyaacon {
+        margin-right: 8px;
+
+        color: $grey500;
+        &.icon-heart {
+          color: $pink300;
+        }
+        &.icon-tag {
+          color: $white;
+        }
+      }
+      &:nth-child(even) {
+        background: $grey50;
+      }
+    }
+  }
+  .button-bar {
+    padding: 10px 0;
+
+    text-align: right;
+    .button {
+      margin-left: 7px;
+    }
+    div {
+      font-size: 12px;
+
+      margin-top: 8px;
+
+      color: $grey500;
+    }
+  }
+  .comment-thread {
+    margin-bottom: 15px;
+  }
+}
+
+// alerts to notify the user, mostly useful for forms
+//
+// .error       - red colored to notify user of bad things
+// .warning     - yellow colored to warn user
+// .success     - green because everything went better than expected
+
+.alert {
+  font-weight: 700;
+
+  display: block;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 28px;
+  padding: 9px;
+
+  text-align: center;
+
+  color: $black-ultra-high;
+  border: 2px dotted $grey500;
+  border-radius: 2px;
+  &.error {
+    border-color: $red500;
+  }
+  &.warning {
+    border-color: $yellow800;
+  }
+  &.success {
+    border-color: $green500;
+  }
+}
+
+// Media Query with 960px breakpoint
+// Fits most modern intermediate screen sizes
+@media only screen and (max-width: 1200px) {
+  header {
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  .main-content-wrapper {
+    padding-top: 141px;
+  }
+  header {
+    nav {
+      float: none;
+      ul {
+        li {
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .search-wrapper {
+      float: none;
+
+      margin-top: 12px;
+      select {
+        margin-bottom: 10px;
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+      .input-wrapper {
+        display: block;
+        input {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  table.torrents tbody tr td {
+    padding: 4px;
+  }
+  .content-text-only {
+    max-width: 100%;
+  }
+  .form-wrapper {
+    width: percentage(2 / 3);
+    min-width: 480px;
+  }
+}
+
+// Media Query with 414px breakpoint
+// Fits most modern mobile screen sizes
+@media only screen and (max-width: 414px) {
+  .main-content-wrapper {
+    padding-top: 15px;
+  }
+  .main-content.col-primary {
+    min-width: 367px;
+  }
+  header {
+    position: initial;
+    nav {
+      display: block;
+      float: none;
+
+      padding: 15px 0;
+      ul {
+        li {
+          display: block;
+
+          text-align: center;
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .search-wrapper {
+      float: none;
+      input, select {
+        display: block;
+
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      .input-wrapper {
+        display: block;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+  table.torrents tbody tr td {
+    padding: 2px;
+  }
+  .tabnav-tabs > li {
+    display: block;
+  }
+  .tabnav-tab.selected {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-radius: 2px;
+  }
+  .pillnav {
+    display: block;
+
+    margin: 7px 0;
+    a {
+      margin-right: 4px;
+      padding: 6px;
+    }
+    + .pillnav {
+      padding-left: 0;
+
+      border-left: 0;
+    }
+  }
+  .form-wrapper {
+    width: 100%;
+    min-width: 333px;
+  }
+  .page-view-torrent {
+    .button-bar {
+      .button {
+        display: block;
+
+        margin-bottom: 8px;
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+extends partials/skeleton
+
+block head
+  - var title = "[demSUBS] Yowamushi Pedal - Grande Road - 16 [720p].mkv"
+
+block body
+  .main-content.col-primary
+    .content-wrapper.page-view-torrent
+      .width-container
+        // the torrent name
+        h1.page-title.primary [demSUBS] Yowamushi Pedal - Grande Road - 16 [720p].mkv
+        // the category
+        span.category
+          = "in "
+          a(href='#!') Anime - English
+          = " by "
+          a(href='#!') HorribleSubs
+      // navigate the headings (description, files, comments, etc.)
+      .tabnav
+        ul.tabnav-tabs
+          li
+            a.tabnav-tab(href='#description') Description
+          li
+            a.tabnav-tab(href='#files') Files
+          li
+            a.tabnav-tab(href='#comments') Comments
+      .width-container
+        // the torrent info
+        .clearfix
+          .col.col-50
+            // the torrent's properties
+            ul.torrent-info
+              li
+                a.label.large.label-trusted(href='#!')
+                  span.nyaacon.icon-tag
+                  | Trusted
+              li
+                span.nyaacon.icon-clock
+                | Uploaded 2014-04-10, 07:35 UTC
+              li
+                span.nyaacon.icon-uploads
+                | Seeders: Status unknown (
+                span.text-green 0
+                | )
+              li
+                span.nyaacon.icon-downloads
+                | Leechers: Status unknown (
+                span.text-red 0
+                | )
+              li
+                span.nyaacon.icon-download
+                | 713274 downloads
+              li
+                span.nyaacon.icon-server
+                | 11.05 GiB filesize
+              li
+                span.nyaacon.icon-link
+                a(href='#!') http://www.aozoranotenshi.moe/
+              li
+                span.nyaacon.icon-heart
+                | 729 fans
+          .col.col-50
+            .button-bar
+              // download the torrent
+              a.button.button-blue.button-icon(href='#!')
+                span.nyaacon.icon-download
+                | Download
+              // txt
+              a.button.button-grey.tooltipped.tooltipped-n(href='#!', aria-label='Download as Text')
+                span.nyaacon.icon-text-doc
+              // flag the torrent
+              a.button.button-grey.tooltipped.tooltipped-n(href='#!', aria-label='Report Torrent')
+                span.nyaacon.icon-flag
+              // become a fan
+              a.button.button-grey.tooltipped.tooltipped-nw(href='#!', aria-label='Become a Fan')
+                span.nyaacon.icon-heart
+              div
+                a(href='http://www.vuze.com/', target='_blank', rel='nofollow') Vuze
+                |  with the Mainline DHT plugin is the recommended client.
+              div
+                a(href='http://files.nyaa.se/HOW_DID_I_PLAYED_BACK.txt', target='_blank', rel='nofollow') Playback help is here
+                | , and you probably need it.
+        // the torrent's description
+        .content-text-only
+          h2#description.page-title.secondary Description
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        // the torrent's files
+        div
+          div
+            h2#files.page-title.secondary.inline Files
+            span.category.inline
+              a(href='#!') Hide Files
+          .torrents-wrapper
+            table.torrents
+              tbody
+                - for (i = 1; i <= 10; i++)
+                  tr
+                    td
+                      | [#ゆうかりんちゃんねる]/2011.05.08 [YUCH-0002] 幽香rin!rin! [例大祭8]/幽香rin!rin!.tta
+                      span.category.inline 5.8 MiB
+        // the torrent's comments
+        div
+          div
+            h2#comments.page-title.secondary.inline Comments
+            span.category.inline
+              a(href='#!') Hide Comments
+          .comment-thread
+            - for (i = 1; i <= 10; i++)
+              .comment-thread-comment
+                .comment-avatar
+                  img(src='assets/images/portrait.png', height='50', width='50', alt='')
+                .comment-content-container
+                  .comment-title
+                    span.label.label-user User
+                    a(href='profile.html') Darby
+                    span.datetime at 2015-02-03 at 00:55 UTC
+                  .comment-content
+                    p wow so fast But thank you Commie!
+            // submit a comment
+            .comment-cta
+              // Please <a href="login.html">login</a> to post a comment
+              form(method='post', action='', accept-charset='utf-8')
+                .comment-reply
+                  textarea#message(name='message', placeholder='Post a comment...')
+                  button.button.button-blue.button-icon(type='submit', name='submit')
+                    span.nyaacon.icon-comments
+                    | Post Comment
+

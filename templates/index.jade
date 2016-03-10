@@ -1,0 +1,84 @@
+extends partials/skeleton
+
+block head
+  - var title = "Browse"
+
+block body
+  .main-content.col-primary
+      .content-wrapper.page-torrents
+        // navigate the categories
+        .tabnav
+          ul.tabnav-tabs
+            li
+              a.tabnav-tab(href='#!') Anime
+            li
+              a.tabnav-tab.selected(href='#!') Audio
+            li
+              a.tabnav-tab(href='#!') Literature
+            li
+              a.tabnav-tab(href='#!') Live Action
+            li
+              a.tabnav-tab(href='#!') Pictures
+            li
+              a.tabnav-tab(href='#!') Software
+        // filter the results
+        .width-container
+          div
+            // filter by category
+            .pillnav
+              a(href='#!') English-Translated
+              a.selected(href='#!') Music Video
+              a(href='#!') Non-English-Translated
+              a(href='#!') Raw
+          div
+            // filter by attributes
+            .pillnav
+              a(href='#!') Date
+              a.selected(href='#!') Seeders
+              a(href='#!') Leechers
+              a(href='#!') Downloads
+              a(href='#!') Size
+              a(href='#!') Name
+            // sort asc/desc
+            .pillnav
+              a.tooltipped.tooltipped-n(href='#!', aria-label='Sort Ascending')
+                span.nyaacon.icon-arrow-up
+              a.selected.tooltipped.tooltipped-n(href='#!', aria-label='Sort Descending')
+                span.nyaacon.icon-arrow-down
+        +pagination
+        // list the torrents
+        .torrents-wrapper
+          table.torrents
+            thead
+              tr
+                th(colspan='3') Name
+                th Size
+                th Downloads
+                th Seed
+                th Leech
+                th Comments
+            tbody
+              - for (var i = 1; i <= 25; i++)
+                - var label = data.labels[Math.floor(Math.random() * (3 - 0 + 1)) + 0];
+                - var ep = Math.floor(Math.random() * (24 - 1 + 1)) + 1;
+                - var rands = [];
+                - for (var j = 0; j < 4; j++)
+                  - rands.push(Math.floor(Math.random() * (317125 - 104 + 1)) + 104);
+                tr
+                  td
+                    .torrent-info
+                      a.torrent-name(href='view.html') [demSUBS] Yowamushi Pedal - Grande Road - #{ep} [720p].mkv
+                    span.category
+                      = "in "
+                      a(href='#!') Anime - English
+                  td
+                    a.label(href='#!', class='label-#{label}') #{label}
+                  td
+                    a.isolated-text.tooltipped.tooltipped-n(href='#!', aria-label='Download', rel='nofollow')
+                      span.nyaacon.icon-download
+                  td 1.265 TiB
+                  td #{rands[0]}
+                  td.text-green #{rands[1]}
+                  td.text-red #{rands[2]}
+                  td #{rands[3]}
+        +pagination

@@ -1,0 +1,69 @@
+extends partials/skeleton
+
+block head
+  - var title = "My Profile"
+
+block body
+  .main-content.col-primary
+        .content-wrapper
+          .width-container
+            div
+              // the name of the user and the RSS feed
+              h1.page-title.primary.inline Darby
+              span.category.inline
+                a(href='#!') RSS
+            // the users torrents
+            div
+              h2.page-title.secondary My Torrents
+              // filter the results
+              .pillnav
+                a(href='#!') Date
+                a.selected(href='#!') Seeders
+                a(href='#!') Leechers
+                a(href='#!') Downloads
+                a(href='#!') Size
+                a(href='#!') Name
+              // sort the results asc/desc
+              .pillnav
+                a.tooltipped.tooltipped-n(href='#!', aria-label='Sort Ascending')
+                  span.nyaacon.icon-arrow-up
+                a.selected.tooltipped.tooltipped-n(href='#!', aria-label='Sort Descending')
+                  span.nyaacon.icon-arrow-down
+          +pagination
+          .width-container
+            // list the torrents
+            .torrents-wrapper
+              table.torrents
+                thead
+                  tr
+                    th(colspan='3') Name
+                    th Size
+                    th Downloads
+                    th Seed
+                    th Leech
+                    th Comments
+                tbody
+                  - for (var i = 1; i <= 25; i++)
+                    - var label = data.labels[Math.floor(Math.random() * (3 - 0 + 1)) + 0];
+                    - var rands = [];
+                    - for (var j = 1; j <= 25; j++)
+                      - rands.push(Math.floor(Math.random() * (317125 - 104 + 1)) + 104);
+                    tr
+                      td
+                        .torrent-info
+                          a.torrent-name(href='view.html') 150129 NOTTV AKB48のあんた、誰？＃695【岩田華怜（乱入）、大川莉央、込山榛香、佐藤妃星、湯本亜美、中村麻里子、 ピスタチオ】.mp4
+                        span.category
+                          = "in "
+                          a(href='#!') Anime - English
+                      td
+                        a.label(href='#!', class='label-#{label}') #{label}
+                      td
+                        a.isolated-text.tooltipped.tooltipped-n(href='#!', aria-label='Download', rel='nofollow')
+                          span.nyaacon.icon-download
+                      td 1.265 TiB
+                      td #{rands[0]}
+                      td.text-green #{rands[1]}
+                      td.text-red #{rands[2]}
+                      td #{rands[3]}
+          +pagination
+

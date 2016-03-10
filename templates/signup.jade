@@ -1,0 +1,59 @@
+extends partials/skeleton
+
+block head
+  - var title = "Sign Up"
+
+block body
+  .main-content.col-primary
+    .content-wrapper
+      .form-wrapper.centered
+        h1.page-title.primary Sign Up
+        form(method='post', action='', accept-charset='utf-8')
+          .clearfix
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_username') Username:
+                dd
+                  input#signup_username(type='text', placeholder='Username', name='username1', required='')
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_username_confirm') Confirm Username:
+                dd
+                  input#signup_username_confirm(type='text', placeholder='Confirm username', name='username2', required='')
+          .clearfix
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_email') Email:
+                dd
+                  input#signup_email(type='email', placeholder='Email', name='email1', required='')
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_email_confirm') Confirm Email:
+                dd
+                  input#signup_email_confirm(type='email', placeholder='Confirm email', name='email2', required='')
+          .clearfix
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_password') Password:
+                dd
+                  input#signup_password(type='password', placeholder='Password', name='pw1', required='')
+            .col.col-50
+              dl
+                dt
+                  label(for='signup_password_confirm') Confirm Password:
+                dd
+                  input#signup_password_confirm(type='password', placeholder='Confirm password', name='pw2', required='')
+          dl
+            dt
+            dd
+              label(for='rules')
+                input#rules(type='checkbox', name='rules', value='1', required='')
+                = "I have read "
+                a(href='http://www.nyaa.se/?page=manual', target='_blank') the rules
+                | .
+          button.button.button-blue(type='submit') Sign Up

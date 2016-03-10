@@ -1,0 +1,167 @@
+extends partials/skeleton
+
+block head
+  - var title = "Account Settings"
+
+block body
+  .main-content.col-primary
+    .content-wrapper
+      .form-wrapper.centered
+        h1.page-title.primary Settings
+        form(method='post', action='', accept-charset='utf-8')
+          dl
+            dt
+              label New comment email notification:
+            dd
+              label(for='notifyemailno')
+                input#notifyemailno(type='radio', name='notifyemail', value='0', checked='checked')
+                | No
+            dd
+              label(for='notifyemailyes')
+                input#notifyemailyes(type='radio', name='notifyemail', value='1')
+                | Yes
+            dd
+              label(for='notifyemailflag')
+                input#notifyemailflag(type='radio', name='notifyemail', value='2')
+                | Only when flagged
+          dl
+            dt
+              label Filter remakes by default:
+            dd
+              label(for='filterremakesno')
+                input#filterremakesno(type='radio', name='filterremakes', value='0', checked='checked')
+                | No
+            dd
+              label(for='filterremakesyes')
+                input#filterremakesyes(type='radio', name='filterremakes', value='1')
+                | Yes
+          h2.page-title.secondary Separate Site Settings
+          dl
+            dt
+              label(for='bbcode_format') Web site - BBCode [url] format:
+            dd
+              input#bbcode_format(type='text', name='web', autocomplete='off')
+          dl
+            dt
+              label(for='irc_format') IRC channel - #channel@irc.example.net format:
+            dd
+              input#irc_format(type='text', name='irc', autocomplete='off')
+          dl
+            dt
+              label(for='custom_css') Address of custom CSS (URL):
+            dd
+              input#custom_css(type='text', name='customcss', autocomplete='off')
+          dl
+            dt
+              label(for='page_layout') Page layout:
+            dd
+              select#page_layout(name='layout')
+                option(value='0') BTx Grouped
+                option(value='1') BTx
+                option(value='2', selected='selected') NT Default
+          h2.page-title.secondary Change Password
+          dl
+            dt
+              label(for='password_current') Current Password:
+            dd
+              input#password_current(type='password', name='p1', placeholder='Your current password is required', autocomplete='off')
+          dl
+            dt
+              label(for='password_new') New Password:
+            dd
+              input#password_new(type='password', name='p2', placeholder='Your current password is required', autocomplete='off')
+          dl
+            dt
+              label(for='password_confirm') Confirm New Password:
+            dd
+              input#password_confirm(type='password', name='p3', placeholder='Your current password is required', autocomplete='off')
+          dl
+            dt
+              label(for='email') Email Address:
+            dd
+              input#email(type='email', name='e1', placeholder='Your current password is required', autocomplete='off')
+          dl
+            dt
+              label(for='email_confirm') Confirm Email Address:
+            dd
+              input#email_confirm(type='email', name='e2', placeholder='Your current password is required', autocomplete='off')
+          h2.page-title.secondary Hidden Categories
+          dl
+            dt
+              span.category Hide categories by checking them below
+            dd
+              label(for='cat_0')
+                input#cat_0(type='checkbox', name='cat_0', value='32')
+                | Anime >> Anime Music Video
+            dd
+              label(for='cat_1')
+                input#cat_1(type='checkbox', name='cat_1', value='37')
+                | Anime >> English-translated Anime
+            dd
+              label(for='cat_2')
+                input#cat_2(type='checkbox', name='cat_2', value='38')
+                | Anime >> Non-English-translated Anime
+            dd
+              label(for='cat_3')
+                input#cat_3(type='checkbox', name='cat_3', value='11')
+                | Anime >> Raw Anime
+            dd
+              label(for='cat_4')
+                input#cat_4(type='checkbox', name='cat_4', value='12')
+                | Literature >> English-translated Literature
+            dd
+              label(for='cat_5')
+                input#cat_5(type='checkbox', name='cat_5', value='39')
+                | Literature >> Non-English-translated Literature
+            dd
+              label(for='cat_6')
+                input#cat_6(type='checkbox', name='cat_6', value='13')
+                | Literature >> Raw Literature
+            dd
+              label(for='cat_7')
+                input#cat_7(type='checkbox', name='cat_7', value='14')
+                | Audio >> Lossless Audio
+            dd
+              label(for='cat_8')
+                input#cat_8(type='checkbox', name='cat_8', value='15')
+                | Audio >> Lossy Audio
+            dd
+              label(for='cat_9')
+                input#cat_9(type='checkbox', name='cat_9', value='18')
+                | Pictures >> Graphics
+            dd
+              label(for='cat_10')
+                input#cat_10(type='checkbox', name='cat_10', value='17')
+                | Pictures >> Photos
+            dd
+              label(for='cat_11')
+                input#cat_11(type='checkbox', name='cat_11', value='19')
+                | Live Action >> English-translated Live Action
+            dd
+              label(for='cat_12')
+                input#cat_12(type='checkbox', name='cat_12', value='22')
+                | Live Action >> Live Action Promotional Video
+            dd
+              label(for='cat_13')
+                input#cat_13(type='checkbox', name='cat_13', value='21')
+                | Live Action >> Non-English-translated Live Action
+            dd
+              label(for='cat_14')
+                input#cat_14(type='checkbox', name='cat_14', value='20')
+                | Live Action >> Raw Live Action
+            dd
+              label(for='cat_15')
+                input#cat_15(type='checkbox', name='cat_15', value='23')
+                | Software >> Applications
+            dd
+              label(for='cat_16')
+                input#cat_16(type='checkbox', name='cat_16', value='24')
+                | Software >> Games
+          h2.page-title.secondary Hidden Torrents
+          dl
+            dt
+              label(for='ignore_tags') Tags (separated by space):
+            dd
+              input#ignore_tags(type='text', name='tags', autocomplete='off')
+          button.button.button-blue(type='submit') Update Settings
+

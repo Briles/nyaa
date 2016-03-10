@@ -1,0 +1,110 @@
+mixin pagination
+  // pagination
+  .pagination.isolated
+    a.disabled.tooltipped.tooltipped-n(href='#!', aria-label='First')
+      span.nyaacon.icon-beginning
+    a.disabled.tooltipped.tooltipped-n(href='#!', aria-label='Previous')
+      span.nyaacon.icon-previous
+    // numbered pages
+    a(href='#!') 1
+    a.current(href='#!') 2
+    a(href='#!') 3
+    a(href='#!') 4
+    a(href='#!') 5
+    a(href='#!') 6
+    a(href='#!') 7
+    a(href='#!') 8
+    a(href='#!') 9
+    a.tooltipped.tooltipped-n(href='#!', aria-label='Next')
+      span.nyaacon.icon-next
+    a.tooltipped.tooltipped-n(href='#!', aria-label='Last')
+      span.nyaacon.icon-end
+  // end pagination
+doctype html
+html(lang='en')
+  head
+    block head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+    title #{title}
+    meta(name='description', content='A BitTorrent community focused on Eastern Asian media including anime, manga, music, and more.')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='icon', type='image/x-icon', href='favicon.ico')
+    link(href='main.min.css', rel='stylesheet', type='text/css', media='all')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500italic,500,700,700italic,900,900italic' rel='stylesheet' type='text/css')
+  body
+    header
+      .header-container
+        nav
+          ul
+            li
+              a(href="index.html") Browse
+            li
+              a(href="upload.html") Upload
+            li
+              a(href="profile.html") Profile
+            li
+              a(href="login.html") Log In
+            li
+              a(href="signup.html") Sign Up
+            li
+              a(href="help.html") Rules &amp; Help
+            li
+              a(href="#!") IRC
+            li
+              a(href="#!") RSS
+            li
+              a(href="#!") Fap
+        .search-wrapper
+          select.inputsearchcategory(name='cats')
+            option(value='0_0') All categories
+            option(value='1_0') Anime
+            option(value='1_32') Anime - Anime Music Video
+            option(value='1_37') Anime - English-translated Anime
+            option(value='1_38') Anime - Non-English-translated Anime
+            option(value='1_11') Anime - Raw Anime
+            option(value='3_0') Audio
+            option(value='3_14') Audio - Lossless Audio
+            option(value='3_15') Audio - Lossy Audio
+            option(value='2_0') Literature
+            option(value='2_12') Literature - English-translated Literature
+            option(value='2_39') Literature - Non-English-translated Literature
+            option(value='2_13') Literature - Raw Literature
+            option(value='5_0') Live Action
+            option(value='5_19') Live Action - English-translated Live Action
+            option(value='5_22') Live Action - Live Action Promotional Video
+            option(value='5_21') Live Action - Non-English-translated Live Action
+            option(value='5_20') Live Action - Raw Live Action
+            option(value='4_0') Pictures
+            option(value='4_18') Pictures - Graphics
+            option(value='4_17') Pictures - Photos
+            option(value='6_0') Software
+            option(value='6_23') Software - Applications
+            option(value='6_24') Software - Games
+          select(name='filter')
+            option(value='0') Show all
+            option(value='1') Filter remakes
+            option(value='2') Trusted only
+            option(value='3') A+ only
+          .input-wrapper
+            input(type="text" placeholder="Search...")
+            button
+              span.nyaacon.icon-search
+    .main-content-wrapper
+      .main-content.row-primary
+        .main-content.col-primary
+          // top horizontal ad
+          a.content-wrapper.content-ad(href='#!')
+            img.fluid-img(src='assets/images/728x90.png', height='90', width='728', alt='')
+      .main-content.row-secondary
+        block body
+        .main-content.col-secondary
+          // right vertical ad
+          a.content-wrapper.content-ad(href='#!')
+            img(src='assets/images/160x600.png', height='600', width='160', alt='')
+      .main-content.row-secondary
+        .main-content.col-primary
+          // bottom horizontal ad
+          a.content-wrapper.content-ad(href='#!')
+            img.fluid-img(src='assets/images/728x90.png', height='90', width='728', alt='')

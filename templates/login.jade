@@ -1,0 +1,33 @@
+extends partials/skeleton
+
+block head
+  - var title = "Log In"
+
+block body
+  .main-content.col-primary
+    .content-wrapper
+      .form-wrapper.centered
+        h1.page-title.primary Log In
+        form(method='post', action='', accept-charset='utf-8')
+          dl
+            dt
+              label(for='login_method') Log In using:
+            dd
+              select#login_method(name='method')
+                option(value='1') User name:
+                option(value='2') E-mail address:
+                option(value='3') User ID:
+          dl
+            dt
+              label(for='login_login') Username, email, or user ID
+            dd
+              input#login_login(type='text', placeholder='Username, email, or user ID...', name='login', required='')
+          dl
+            dt
+              label(for='login_password') Password
+            dd
+              input#login_password(type='password', placeholder='Password', name='password', required='')
+          .clearfix
+            button.button.button-blue(type='submit') Log In
+            .pull-right
+              a.isolated-text(href='#!') I've forgotten my password

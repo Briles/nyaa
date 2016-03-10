@@ -1,0 +1,21 @@
+{
+    "name": "nyaa",
+    "copyright": "2016",
+    "license": "MIT",
+    "devDependencies": {
+        "autoprefixer": "*",
+        "grunt": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-htmlmin": "*",
+        "grunt-contrib-jade": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-csscomb": "*",
+        "grunt-postcss": "*",
+        "grunt-sass": "*",
+        "grunt-uncss": "*",
+        "install": "*",
+        "normalize.css": "*"
+    }
+}

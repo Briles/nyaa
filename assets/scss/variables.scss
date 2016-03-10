@@ -1,0 +1,70 @@
+$black: #000;
+$white: #fff;
+$--font-stack: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Colors with contrasts conforming to W3C contrast standards (assumes white #FFF background)
+//
+// default      - Use low
+// :hover       - Use high;
+// :focus       - Use high
+// .disabled    - Use ultra low;
+$black-ultra-high: hsla(0, 0%, 0%, .87);
+$black-high: hsla(0, 0%, 0%, .54);
+$black-low: hsla(0, 0%, 0%, .26);
+$black-ultra-low: hsla(0, 0%, 0%, .12);
+$white-ultra-high: hsla(0, 100%, 100%, .87);
+$white-high: hsla(0, 100%, 100%, .7);
+$white-low: hsla(0, 100%, 100%, .3);
+$white-ultra-low: hsla(0, 100%, 100%, .12);
+
+// greys
+$grey50: hsl(0, 0%, 98%);
+$grey100: hsl(0, 0%, 96%);
+$grey200: hsl(0, 0%, 93%);
+$grey300: hsl(0, 0%, 88%);
+$grey400: hsl(0, 0%, 74%);
+$grey500: hsl(0, 0%, 62%);
+$grey600: hsl(0, 0%, 46%);
+$grey700: hsl(0, 0%, 38%);
+$grey800: hsl(0, 0%, 26%);
+$grey900: hsl(0, 0%, 13%);
+
+// reds
+$red500: hsl(4, 90%, 58%);
+
+// blues
+$blue50: hsl(205, 87%, 94%);
+$blue100: hsl(207, 89%, 86%);
+$blue200: hsl(207, 90%, 77%);
+$blue300: hsl(207, 89%, 68%);
+$blue400: hsl(207, 90%, 61%);
+$blue500: hsl(207, 90%, 54%);
+$blue600: hsl(208, 79%, 51%);
+$blue700: hsl(210, 79%, 46%);
+$blue800: hsl(212, 80%, 42%);
+$blue900: hsl(216, 85%, 34%);
+$blueaccent100: hsl(217, 100%, 75%);
+$blueaccent200: hsl(218, 100%, 63%);
+$blueaccent400: hsl(218, 100%, 58%);
+$blueaccent700: hsl(224, 100%, 58%);
+
+// indigos
+$indigo500: hsl(231, 48%, 48%);
+
+// bluegreys
+$bluegrey50: hsl(204, 15%, 94%);
+$bluegrey100: hsl(198, 16%, 84%);
+$bluegrey200: hsl(200, 15%, 73%);
+$bluegrey300: hsl(200, 16%, 62%);
+$bluegrey400: hsl(200, 15%, 54%);
+$bluegrey500: hsl(200, 18%, 46%);
+
+// greens
+$green500: hsl(122, 39%, 49%);
+$lightgreen500: hsl(88, 50%, 53%);
+
+// yellows
+$yellow800: hsl(37, 95%, 56%);
+
+// pinks
+$pink300: hsl(340, 83%, 66%);
